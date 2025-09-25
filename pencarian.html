@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pencarian Canggih - Desa Molowahu</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <style>
+ /* --- CSS Kustom untuk Google Programmable Search --- */
+
+/* Menata wadah utama pencarian */
+.gcse-search {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Menata kotak input pencarian */
+.gsc-input-box {
+    border: 2px solid #ddd !important;
+    border-radius: 25px !important;
+    padding: 2px !important;
+    box-shadow: none !important;
+}
+
+table.gsc-search-box td.gsc-input {
+    padding-right: 12px !important;
+}
+
+input.gsc-input {
+    background: none !important;
+    font-size: 1rem !important;
+    padding: 10px !important;
+    color: var(--text-color) !important;
+}
+
+/* Menata tombol 'Cari' */
+.gsc-search-button-v2,
+input.gsc-search-button {
+    background-color: var(--primary-color) !important;
+    border: 2px solid var(--primary-color) !important;
+    border-radius: 25px !important;
+    padding: 12px 20px !important;
+    cursor: pointer;
+    transition: background-color 0.3s !important;
+}
+
+.gsc-search-button-v2:hover,
+input.gsc-search-button:hover {
+    background-color: var(--secondary-color) !important;
+    border-color: var(--secondary-color) !important;
+}
+
+/* Menata hasil pencarian */
+.gsc-webResult.gsc-result {
+    border-color: #eee !important;
+    padding-bottom: 20px !important;
+    margin-bottom: 20px !important;
+}
+
+/* Menata judul hasil pencarian (link) */
+.gs-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.3rem !important;
+    text-decoration: none !important;
+    color: var(--primary-color) !important;
+}
+
+.gs-title:hover {
+    text-decoration: underline !important;
+}
+
+/* Menata URL dan ringkasan teks */
+.gsc-url-top, .gs-snippet {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem !important;
+    color: var(--text-color) !important;
+}
+
+/* Menata tombol halaman (paginasi) */
+.gsc-cursor-page {
+    color: var(--primary-color) !important;
+    text-decoration: none !important;
+    padding: 5px 10px !important;
+    border: 1px solid #ddd !important;
+    margin: 0 2px !important;
+    border-radius: 5px !important;
+}
+
+.gsc-cursor-current-page {
+    background-color: var(--primary-color) !important;
+    color: var(--white-color) !important;
+    border-color: var(--primary-color) !important;
+}
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <div class="logo">
+            <img src="image/LOGO KAB.GOR.png" alt="Logo Desa Molowahu">
+            <div class="logo-text">
+                <h1>Desa Molowahu</h1>
+                <p>Kecamatan Tibawa, Kabupaten Gorontalo</p>
+            </div>
+        </div>
+        <nav id="main-nav">
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="aparat/aparat.html">Aparatur Desa</a></li>
+                <li><a href="berita/berita.html">Berita</a></li>
+                <li><a href="galeri/galeri.html">Galeri</a></li>
+                <li><a href="pencarian.html" class="active">Pencarian</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<div class="search-page-container">
+    <div class="search-hero">
+        <div class="hero-content">
+            <h2>Pusat Informasi Desa</h2>
+            <p>Cari berita, pengumuman, atau informasi layanan yang Anda butuhkan.</p>
+            
+            <div class="gcse-searchbox-only" data-resultsUrl="pencarian.html"></div>
+        </div>
+    </div>
+    
+    <div class="search-results-container container">
+         <div class="gcse-searchresults-only"></div>
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <div class="footer-bottom">
+            © 2025 Pemerintah Desa Molowahu. All Rights Reserved.
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Logika untuk mendeteksi kapan hasil pencarian muncul dan memicu animasi
+    document.addEventListener('DOMContentLoaded', function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has('q') && urlParams.get('q').trim() !== '') {
+            document.body.classList.add('results-visible');
+        }
+    });
+</script>
+
+<script async src="https://cse.google.com/cse.js?cx=MASUKKAN_CX_ANDA_DISINI"></script>
+
+</body>
+</html>
